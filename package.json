@@ -1,0 +1,22 @@
+{
+  "name": "javascript-pg",
+  "version": "1.0.0",
+  "description": "w4d2 activity",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theoryofchao/javascript-pg.git"
+  },
+  "author": "Roger Chao",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/theoryofchao/javascript-pg/issues"
+  },
+  "homepage": "https://github.com/theoryofchao/javascript-pg#readme",
+  "dependencies": {
+    "pg": "^6.1.2"
+  }
+}
