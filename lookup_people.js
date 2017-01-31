@@ -28,7 +28,7 @@ const client = new pg.Client({
 var createQuery = (typed) => {
   let famous_query = `SELECT *
                       FROM famous_people
-                      WHERE first_name LIKE '%${typed}%' OR last_name LIKE '%${typed}%'`;
+                      WHERE first_name LIKE CONCAT('%', $1::text, '%') OR last_name LIKE CONCAT('%', $1::text, '%')`;
   return famous_query;
 };
 
@@ -53,7 +53,7 @@ client.connect((err) => {
   let famous_query = createQuery(typed); 
 
   console.log("Searching...");
-  client.query(famous_query, (err, result) => {
+  client.query(famous_query, [typed], (err, result) => {
     if (err) {
       return console.error("error running query", err);
     }
