@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/theoryofchao/javascript-pg#readme",
   "dependencies": {
+    "knex": "^0.12.6",
     "pg": "^6.1.2"
   }
 }
