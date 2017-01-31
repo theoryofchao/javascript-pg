@@ -1,7 +1,7 @@
 let typed = process.argv[2];
 
 const pg = require("pg");
-const settings = require("./settingsknex"); // settings.json
+const settings = require("./settings"); // settings.json
 
 const knex = require('knex')({
   client: 'pg',
@@ -26,8 +26,8 @@ let searchFamousPeople = (typed, callback) => {
                    .where(`first_name`, `like`, `%${param}%`)
                    .orWhere(`last_name`, `like`, `%${param}%`)
                    .timeout(1000)
-                   .then( (rows) => {
-                     callback(rows);
+                   .then( (result) => {
+                     callback(result);
                      knex.destroy();
                    })
                    .catch( (error) => {
